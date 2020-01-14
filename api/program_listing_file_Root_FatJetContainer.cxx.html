@@ -1,0 +1,977 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File FatJetContainer.cxx &mdash; xAODAnaHelpers 6c8b1f1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> xAODAnaHelpers
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                6c8b1f1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../Intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Installing.html">Installing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../UsingUs.html">xAH_run.py</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Algorithms.html">Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Community.html">Community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs.html">xAH FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="library_root.html">Doxygen API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">xAODAnaHelpers</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File FatJetContainer.cxx</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/program_listing_file_Root_FatJetContainer.cxx.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-fatjetcontainer-cxx">
+<span id="program-listing-file-root-fatjetcontainer-cxx"></span><h1>Program Listing for File FatJetContainer.cxx<a class="headerlink" href="#program-listing-for-file-fatjetcontainer-cxx" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_Root_FatJetContainer.cxx.html#file-root-fatjetcontainer-cxx"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">Root/FatJetContainer.cxx</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;xAODAnaHelpers/FatJetContainer.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;xAODAnaHelpers/HelperFunctions.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;xAODTruth/TruthEventContainer.h&quot;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">xAH</span><span class="p">;</span>
+
+<span class="n">FatJetContainer</span><span class="o">::</span><span class="n">FatJetContainer</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">detailStr</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">subjetDetailStr</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">suffix</span><span class="p">,</span>
+                 <span class="kt">float</span> <span class="n">units</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">mc</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">ParticleContainer</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">detailStr</span><span class="p">,</span><span class="n">units</span><span class="p">,</span><span class="n">mc</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="n">suffix</span><span class="p">),</span>
+    <span class="n">m_trackJetPtCut</span><span class="p">(</span><span class="mf">10e3</span><span class="p">),</span>
+    <span class="n">m_trackJetEtaCut</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="p">{</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_scales</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">m_JetConstitScaleMomentum_eta</span>       <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+      <span class="n">m_JetConstitScaleMomentum_phi</span>       <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+      <span class="n">m_JetConstitScaleMomentum_m</span>       <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+      <span class="n">m_JetConstitScaleMomentum_pt</span>        <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+
+      <span class="n">m_JetEMScaleMomentum_eta</span>        <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+      <span class="n">m_JetEMScaleMomentum_phi</span>        <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+      <span class="n">m_JetEMScaleMomentum_m</span>        <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+      <span class="n">m_JetEMScaleMomentum_pt</span>       <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_area</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_GhostArea</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_ActiveArea</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_VoronoiArea</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+
+    <span class="n">m_ActiveArea4vec_pt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_ActiveArea4vec_eta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_ActiveArea4vec_phi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_ActiveArea4vec_m</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_substructure</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_Split12</span>           <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_Split23</span>           <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_Split34</span>           <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_tau1_wta</span>          <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_tau2_wta</span>          <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_tau3_wta</span>          <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_tau21_wta</span>         <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_tau32_wta</span>         <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_ECF1</span>              <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_ECF2</span>              <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_ECF3</span>              <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_C2</span>                <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_D2</span>                <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_NTrimSubjets</span>      <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_NClusters</span>         <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>  <span class="p">();</span>
+    <span class="n">m_nTracks</span>           <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>  <span class="p">();</span>
+
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_numConstituents</span>    <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituentAll</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_constituentWeights</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_constituent_pt</span>      <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_constituent_eta</span>     <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_constituent_phi</span>     <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_constituent_e</span>       <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_bosonCount</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_nTQuarks</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span> <span class="p">();</span>
+    <span class="n">m_nHBosons</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span> <span class="p">();</span>
+    <span class="n">m_nWBosons</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span> <span class="p">();</span>
+    <span class="n">m_nZBosons</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span> <span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_muonCorrection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_muonCorrected_pt</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_muonCorrected_eta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_muonCorrected_phi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="n">m_muonCorrected_m</span>   <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">trackJetName</span> <span class="p">:</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_trackJetNames</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">trkJetName</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+      <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">suffix</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">){</span> <span class="n">trkJetName</span> <span class="o">+=</span> <span class="s">&quot;_&quot;</span><span class="o">+</span><span class="n">suffix</span><span class="p">;</span> <span class="p">}</span>
+      <span class="n">trkJetName</span> <span class="o">+=</span> <span class="s">&quot;_&quot;</span><span class="o">+</span><span class="n">trackJetName</span><span class="p">;</span>
+      <span class="n">m_trkJets</span><span class="p">[</span><span class="n">trackJetName</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">xAH</span><span class="o">::</span><span class="n">JetContainer</span><span class="p">(</span><span class="n">trkJetName</span><span class="p">,</span> <span class="n">subjetDetailStr</span><span class="p">,</span> <span class="n">m_units</span><span class="p">,</span> <span class="n">m_mc</span><span class="p">);</span>
+
+      <span class="n">m_trkJetsIdx</span><span class="p">[</span><span class="n">trackJetName</span><span class="p">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span> <span class="p">();</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="n">FatJetContainer</span><span class="o">::~</span><span class="n">FatJetContainer</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">m_debug</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; Deleting FatJetContainer &quot;</span>  <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_scales</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="k">delete</span> <span class="n">m_JetConstitScaleMomentum_eta</span> <span class="p">;</span>
+      <span class="k">delete</span> <span class="n">m_JetConstitScaleMomentum_phi</span> <span class="p">;</span>
+      <span class="k">delete</span> <span class="n">m_JetConstitScaleMomentum_m</span>   <span class="p">;</span>
+      <span class="k">delete</span> <span class="n">m_JetConstitScaleMomentum_pt</span>  <span class="p">;</span>
+
+      <span class="k">delete</span> <span class="n">m_JetEMScaleMomentum_eta</span>      <span class="p">;</span>
+      <span class="k">delete</span> <span class="n">m_JetEMScaleMomentum_phi</span>      <span class="p">;</span>
+      <span class="k">delete</span> <span class="n">m_JetEMScaleMomentum_m</span>        <span class="p">;</span>
+      <span class="k">delete</span> <span class="n">m_JetEMScaleMomentum_pt</span>       <span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_area</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">delete</span> <span class="n">m_GhostArea</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_ActiveArea</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_VoronoiArea</span><span class="p">;</span>
+
+    <span class="k">delete</span> <span class="n">m_ActiveArea4vec_pt</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_ActiveArea4vec_eta</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_ActiveArea4vec_phi</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_ActiveArea4vec_m</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_substructure</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">delete</span> <span class="n">m_Split12</span>     <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_Split23</span>     <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_Split34</span>     <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_tau1_wta</span>    <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_tau2_wta</span>    <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_tau3_wta</span>    <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_tau21_wta</span>   <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_tau32_wta</span>   <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_ECF1</span>        <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_ECF2</span>        <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_ECF3</span>        <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_C2</span>          <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_D2</span>          <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_NTrimSubjets</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_NClusters</span>   <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_nTracks</span>   <span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">delete</span> <span class="n">m_numConstituents</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituentAll</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">delete</span> <span class="n">m_constituentWeights</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_constituent_pt</span>    <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_constituent_eta</span>   <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_constituent_phi</span>   <span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_constituent_e</span>     <span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_bosonCount</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">delete</span> <span class="n">m_nTQuarks</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_nHBosons</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_nWBosons</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_nZBosons</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_muonCorrection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">delete</span> <span class="n">m_muonCorrected_pt</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_muonCorrected_eta</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_muonCorrected_phi</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">m_muonCorrected_m</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_trackJetNames</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">){</span>
+    <span class="k">for</span><span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">kv</span> <span class="p">:</span> <span class="n">m_trkJets</span><span class="p">)</span>
+      <span class="p">{</span>
+    <span class="k">delete</span> <span class="n">m_trkJets</span>   <span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">];</span>
+    <span class="k">delete</span> <span class="n">m_trkJetsIdx</span><span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">];</span>
+      <span class="p">}</span>
+    <span class="n">m_trkJets</span>   <span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_trkJetsIdx</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">FatJetContainer</span><span class="o">::</span><span class="n">setTree</span><span class="p">(</span><span class="n">TTree</span> <span class="o">*</span><span class="n">tree</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">//</span>
+  <span class="c1">// Connect branches</span>
+  <span class="n">ParticleContainer</span><span class="o">::</span><span class="n">setTree</span><span class="p">(</span><span class="n">tree</span><span class="p">);</span>
+
+  <span class="k">if</span><span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_scales</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetConstitScaleMomentum_eta&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_JetConstitScaleMomentum_eta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetConstitScaleMomentum_phi&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_JetConstitScaleMomentum_phi</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetConstitScaleMomentum_m&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_JetConstitScaleMomentum_m</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetConstitScaleMomentum_pt&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_JetConstitScaleMomentum_pt</span><span class="p">);</span>
+
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetEMScaleMomentum_eta&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_JetEMScaleMomentum_eta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetEMScaleMomentum_phi&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_JetEMScaleMomentum_phi</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetEMScaleMomentum_m&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_JetEMScaleMomentum_m</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetEMScaleMomentum_pt&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_JetEMScaleMomentum_pt</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_area</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;m_GhostArea&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_GhostArea</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;m_ActiveArea&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_ActiveArea</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;m_VoronoiArea&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_VoronoiArea</span><span class="p">);</span>
+
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;m_ActiveArea4vec_pt&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_ActiveArea4vec_pt</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;m_ActiveArea4vec_eta&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_ActiveArea4vec_eta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;m_ActiveArea4vec_phi&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_ActiveArea4vec_phi</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;m_ActiveArea4vec_m&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_ActiveArea4vec_m</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_substructure</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;Split12&quot;</span><span class="p">,</span>      <span class="o">&amp;</span><span class="n">m_Split12</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;Split23&quot;</span><span class="p">,</span>      <span class="o">&amp;</span><span class="n">m_Split23</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;Split34&quot;</span><span class="p">,</span>      <span class="o">&amp;</span><span class="n">m_Split34</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau1_wta&quot;</span><span class="p">,</span>     <span class="o">&amp;</span><span class="n">m_tau1_wta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau2_wta&quot;</span><span class="p">,</span>     <span class="o">&amp;</span><span class="n">m_tau2_wta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau3_wta&quot;</span><span class="p">,</span>     <span class="o">&amp;</span><span class="n">m_tau3_wta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau21_wta&quot;</span><span class="p">,</span>    <span class="o">&amp;</span><span class="n">m_tau21_wta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau32_wta&quot;</span><span class="p">,</span>    <span class="o">&amp;</span><span class="n">m_tau32_wta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ECF1&quot;</span><span class="p">,</span>         <span class="o">&amp;</span><span class="n">m_ECF1</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ECF2&quot;</span><span class="p">,</span>         <span class="o">&amp;</span><span class="n">m_ECF2</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ECF3&quot;</span><span class="p">,</span>         <span class="o">&amp;</span><span class="n">m_ECF3</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;C2&quot;</span><span class="p">,</span>           <span class="o">&amp;</span><span class="n">m_C2</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;D2&quot;</span><span class="p">,</span>           <span class="o">&amp;</span><span class="n">m_D2</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;NTrimSubjets&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_NTrimSubjets</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>  <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;Nclusters&quot;</span><span class="p">,</span>    <span class="o">&amp;</span><span class="n">m_NClusters</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>  <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nTracks&quot;</span><span class="p">,</span>      <span class="o">&amp;</span><span class="n">m_nTracks</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>  <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;numConstituents&quot;</span><span class="p">,</span>    <span class="o">&amp;</span><span class="n">m_numConstituents</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituentAll</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituentWeights&quot;</span><span class="p">,</span>  <span class="o">&amp;</span><span class="n">m_constituentWeights</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituent_pt&quot;</span><span class="p">,</span>      <span class="o">&amp;</span><span class="n">m_constituent_pt</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituent_eta&quot;</span><span class="p">,</span>     <span class="o">&amp;</span><span class="n">m_constituent_eta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituent_phi&quot;</span><span class="p">,</span>     <span class="o">&amp;</span><span class="n">m_constituent_phi</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituent_e&quot;</span><span class="p">,</span>       <span class="o">&amp;</span><span class="n">m_constituent_e</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_bosonCount</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nTQuarks&quot;</span><span class="p">,</span>  <span class="o">&amp;</span><span class="n">m_nTQuarks</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nHBosons&quot;</span><span class="p">,</span>  <span class="o">&amp;</span><span class="n">m_nHBosons</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nWBosons&quot;</span><span class="p">,</span>  <span class="o">&amp;</span><span class="n">m_nWBosons</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nZBosons&quot;</span><span class="p">,</span>  <span class="o">&amp;</span><span class="n">m_nZBosons</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_muonCorrection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="kt">float</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;muonCorrected_pt&quot;</span> <span class="p">,</span> <span class="o">&amp;</span><span class="n">m_muonCorrected_pt</span> <span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="kt">float</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;muonCorrected_eta&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_muonCorrected_eta</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="kt">float</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;muonCorrected_phi&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_muonCorrected_phi</span><span class="p">);</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="kt">float</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;muonCorrected_m&quot;</span>  <span class="p">,</span> <span class="o">&amp;</span><span class="n">m_muonCorrected_m</span>  <span class="p">);</span>
+
+  <span class="p">}</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">kv</span> <span class="p">:</span> <span class="n">m_trkJets</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">m_trkJets</span><span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">JetContainer</span><span class="o">::</span><span class="n">setTree</span><span class="p">(</span><span class="n">tree</span><span class="p">);</span>
+      <span class="k">if</span><span class="p">(</span><span class="n">tree</span><span class="o">-&gt;</span><span class="n">GetBranch</span><span class="p">(</span><span class="n">branchName</span><span class="p">(</span><span class="s">&quot;trkJetsIdx&quot;</span><span class="p">).</span><span class="n">c_str</span><span class="p">()))</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;trkJetsIdx&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_trkJetsIdx</span><span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">]);</span>
+      <span class="k">else</span>
+    <span class="n">connectBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;trkJetsIdx_&quot;</span><span class="o">+</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m_trkJetsIdx</span><span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">]);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">FatJetContainer</span><span class="o">::</span><span class="n">updateParticle</span><span class="p">(</span><span class="n">uint</span> <span class="n">idx</span><span class="p">,</span> <span class="n">FatJet</span><span class="o">&amp;</span> <span class="n">fatjet</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">m_debug</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;in FatJetContainer::updateParticle &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">ParticleContainer</span><span class="o">::</span><span class="n">updateParticle</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="n">fatjet</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_scales</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">JetConstitScaleMomentum_eta</span> <span class="o">=</span> <span class="n">m_JetConstitScaleMomentum_eta</span> <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">JetConstitScaleMomentum_phi</span> <span class="o">=</span> <span class="n">m_JetConstitScaleMomentum_phi</span> <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">JetConstitScaleMomentum_m</span> <span class="o">=</span> <span class="n">m_JetConstitScaleMomentum_m</span> <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">JetConstitScaleMomentum_pt</span> <span class="o">=</span> <span class="n">m_JetConstitScaleMomentum_pt</span> <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">JetEMScaleMomentum_eta</span> <span class="o">=</span> <span class="n">m_JetEMScaleMomentum_eta</span> <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">JetEMScaleMomentum_phi</span> <span class="o">=</span> <span class="n">m_JetEMScaleMomentum_phi</span> <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">JetEMScaleMomentum_m</span> <span class="o">=</span> <span class="n">m_JetEMScaleMomentum_m</span> <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">JetEMScaleMomentum_pt</span> <span class="o">=</span> <span class="n">m_JetEMScaleMomentum_pt</span> <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_area</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">GhostArea</span> <span class="o">=</span> <span class="n">m_GhostArea</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">ActiveArea</span> <span class="o">=</span> <span class="n">m_ActiveArea</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">VoronoiArea</span> <span class="o">=</span> <span class="n">m_VoronoiArea</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">ActiveArea4vec_pt</span> <span class="o">=</span> <span class="n">m_ActiveArea4vec_pt</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">ActiveArea4vec_eta</span> <span class="o">=</span> <span class="n">m_ActiveArea4vec_eta</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">ActiveArea4vec_phi</span> <span class="o">=</span> <span class="n">m_ActiveArea4vec_phi</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">ActiveArea4vec_m</span> <span class="o">=</span> <span class="n">m_ActiveArea4vec_m</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_substructure</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">Split12</span>      <span class="o">=</span> <span class="n">m_Split12</span>     <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">Split23</span>      <span class="o">=</span> <span class="n">m_Split23</span>     <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">Split34</span>      <span class="o">=</span> <span class="n">m_Split34</span>     <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">tau1_wta</span>     <span class="o">=</span> <span class="n">m_tau1_wta</span>    <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">tau2_wta</span>     <span class="o">=</span> <span class="n">m_tau2_wta</span>    <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">tau3_wta</span>     <span class="o">=</span> <span class="n">m_tau3_wta</span>    <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">tau21_wta</span>    <span class="o">=</span> <span class="n">m_tau21_wta</span>   <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">tau32_wta</span>    <span class="o">=</span> <span class="n">m_tau32_wta</span>   <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">ECF1</span>         <span class="o">=</span> <span class="n">m_ECF1</span>        <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">ECF2</span>         <span class="o">=</span> <span class="n">m_ECF2</span>        <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">ECF3</span>         <span class="o">=</span> <span class="n">m_ECF3</span>        <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">C2</span>           <span class="o">=</span> <span class="n">m_C2</span>          <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">D2</span>           <span class="o">=</span> <span class="n">m_D2</span>          <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">NTrimSubjets</span> <span class="o">=</span> <span class="n">m_NTrimSubjets</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">NClusters</span>    <span class="o">=</span> <span class="n">m_NClusters</span>   <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">nTracks</span>      <span class="o">=</span> <span class="n">m_nTracks</span>     <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">numConstituents</span>    <span class="o">=</span> <span class="n">m_numConstituents</span>   <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituentAll</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">constituentWeights</span> <span class="o">=</span> <span class="n">m_constituentWeights</span>  <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">constituent_pt</span>     <span class="o">=</span> <span class="n">m_constituent_pt</span>      <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">constituent_eta</span>    <span class="o">=</span> <span class="n">m_constituent_eta</span>     <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">constituent_phi</span>    <span class="o">=</span> <span class="n">m_constituent_phi</span>     <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">constituent_e</span>      <span class="o">=</span> <span class="n">m_constituent_e</span>       <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_bosonCount</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">nTQuarks</span> <span class="o">=</span> <span class="n">m_nTQuarks</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">nHBosons</span> <span class="o">=</span> <span class="n">m_nHBosons</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">nWBosons</span> <span class="o">=</span> <span class="n">m_nWBosons</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">nZBosons</span> <span class="o">=</span> <span class="n">m_nZBosons</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_muonCorrection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">muonCorrected_pt</span>  <span class="o">=</span> <span class="n">m_muonCorrected_pt</span> <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">muonCorrected_eta</span> <span class="o">=</span> <span class="n">m_muonCorrected_eta</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">muonCorrected_phi</span> <span class="o">=</span> <span class="n">m_muonCorrected_phi</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+    <span class="n">fatjet</span><span class="p">.</span><span class="n">muonCorrected_m</span>   <span class="o">=</span> <span class="n">m_muonCorrected_m</span>  <span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">kv</span> <span class="p">:</span> <span class="n">m_trkJets</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">trkJets</span><span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">clear</span><span class="p">();</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="o">*</span><span class="n">trkJetsIdx</span><span class="o">=</span><span class="n">m_trkJetsIdx</span><span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">];</span>
+      <span class="k">for</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="nl">iTrkJet</span> <span class="p">:</span> <span class="n">trkJetsIdx</span><span class="o">-&gt;</span><span class="n">at</span><span class="p">(</span><span class="n">idx</span><span class="p">))</span>
+    <span class="p">{</span>
+      <span class="n">Jet</span> <span class="n">thisTrkJet</span><span class="p">;</span>
+      <span class="n">kv</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">updateParticle</span><span class="p">(</span><span class="n">iTrkJet</span><span class="p">,</span> <span class="n">thisTrkJet</span><span class="p">);</span>
+      <span class="n">fatjet</span><span class="p">.</span><span class="n">trkJets</span><span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="n">thisTrkJet</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="p">}</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="n">m_debug</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;leave FatJetContainer::updateParticle &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+
+<span class="kt">void</span> <span class="n">FatJetContainer</span><span class="o">::</span><span class="n">setBranches</span><span class="p">(</span><span class="n">TTree</span> <span class="o">*</span><span class="n">tree</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">ParticleContainer</span><span class="o">::</span><span class="n">setBranches</span><span class="p">(</span><span class="n">tree</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_scales</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetConstitScaleMomentum_eta&quot;</span><span class="p">,</span> <span class="n">m_JetConstitScaleMomentum_eta</span><span class="p">);</span>
+      <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetConstitScaleMomentum_phi&quot;</span><span class="p">,</span> <span class="n">m_JetConstitScaleMomentum_phi</span><span class="p">);</span>
+      <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetConstitScaleMomentum_m&quot;</span><span class="p">,</span> <span class="n">m_JetConstitScaleMomentum_m</span><span class="p">);</span>
+      <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetConstitScaleMomentum_pt&quot;</span><span class="p">,</span> <span class="n">m_JetConstitScaleMomentum_pt</span><span class="p">);</span>
+
+      <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetEMScaleMomentum_eta&quot;</span><span class="p">,</span> <span class="n">m_JetEMScaleMomentum_eta</span><span class="p">);</span>
+      <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetEMScaleMomentum_phi&quot;</span><span class="p">,</span> <span class="n">m_JetEMScaleMomentum_phi</span><span class="p">);</span>
+      <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetEMScaleMomentum_m&quot;</span><span class="p">,</span> <span class="n">m_JetEMScaleMomentum_m</span><span class="p">);</span>
+      <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;JetEMScaleMomentum_pt&quot;</span><span class="p">,</span> <span class="n">m_JetEMScaleMomentum_pt</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_area</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;GhostArea&quot;</span><span class="p">,</span> <span class="n">m_GhostArea</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ActiveArea&quot;</span><span class="p">,</span> <span class="n">m_ActiveArea</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;VoronoiArea&quot;</span><span class="p">,</span> <span class="n">m_VoronoiArea</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ActiveArea4vec_pt&quot;</span><span class="p">,</span> <span class="n">m_ActiveArea4vec_pt</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ActiveArea4vec_eta&quot;</span><span class="p">,</span> <span class="n">m_ActiveArea4vec_eta</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ActiveArea4vec_phi&quot;</span><span class="p">,</span> <span class="n">m_ActiveArea4vec_phi</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ActiveArea4vec_m&quot;</span><span class="p">,</span> <span class="n">m_ActiveArea4vec_m</span><span class="p">);</span>
+
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_substructure</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;Split12&quot;</span><span class="p">,</span>      <span class="n">m_Split12</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;Split23&quot;</span><span class="p">,</span>      <span class="n">m_Split23</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;Split34&quot;</span><span class="p">,</span>      <span class="n">m_Split34</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau1_wta&quot;</span><span class="p">,</span>     <span class="n">m_tau1_wta</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau2_wta&quot;</span><span class="p">,</span>     <span class="n">m_tau2_wta</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau3_wta&quot;</span><span class="p">,</span>     <span class="n">m_tau3_wta</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau21_wta&quot;</span><span class="p">,</span>    <span class="n">m_tau21_wta</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;tau32_wta&quot;</span><span class="p">,</span>    <span class="n">m_tau32_wta</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ECF1&quot;</span><span class="p">,</span>         <span class="n">m_ECF1</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ECF2&quot;</span><span class="p">,</span>         <span class="n">m_ECF2</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;ECF3&quot;</span><span class="p">,</span>         <span class="n">m_ECF3</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;C2&quot;</span><span class="p">,</span>           <span class="n">m_C2</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;D2&quot;</span><span class="p">,</span>           <span class="n">m_D2</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;NTrimSubjets&quot;</span><span class="p">,</span> <span class="n">m_NTrimSubjets</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>  <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;Nclusters&quot;</span><span class="p">,</span>    <span class="n">m_NClusters</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>  <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nTracks&quot;</span><span class="p">,</span>      <span class="n">m_nTracks</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span>  <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;numConstituents&quot;</span><span class="p">,</span>    <span class="n">m_numConstituents</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituentAll</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituentWeights&quot;</span><span class="p">,</span>  <span class="n">m_constituentWeights</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituent_pt&quot;</span><span class="p">,</span>      <span class="n">m_constituent_pt</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituent_eta&quot;</span><span class="p">,</span>     <span class="n">m_constituent_eta</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituent_phi&quot;</span><span class="p">,</span>     <span class="n">m_constituent_phi</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;constituent_e&quot;</span><span class="p">,</span>       <span class="n">m_constituent_e</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_bosonCount</span><span class="p">){</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nTQuarks&quot;</span><span class="p">,</span>       <span class="n">m_nTQuarks</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nHBosons&quot;</span><span class="p">,</span>       <span class="n">m_nHBosons</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nWBosons&quot;</span><span class="p">,</span>       <span class="n">m_nWBosons</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;nZBosons&quot;</span><span class="p">,</span>       <span class="n">m_nZBosons</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_muonCorrection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;muonCorrected_pt&quot;</span> <span class="p">,</span> <span class="n">m_muonCorrected_pt</span> <span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;muonCorrected_eta&quot;</span><span class="p">,</span> <span class="n">m_muonCorrected_eta</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;muonCorrected_phi&quot;</span><span class="p">,</span> <span class="n">m_muonCorrected_phi</span><span class="p">);</span>
+    <span class="n">setBranch</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;muonCorrected_m&quot;</span>  <span class="p">,</span> <span class="n">m_muonCorrected_m</span>  <span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">kv</span> <span class="p">:</span> <span class="n">m_trkJets</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">kv</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">setBranches</span><span class="p">(</span><span class="n">tree</span><span class="p">);</span>
+      <span class="n">setBranch</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="s">&quot;trkJetsIdx_&quot;</span><span class="o">+</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">m_trkJetsIdx</span><span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+  <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">void</span> <span class="n">FatJetContainer</span><span class="o">::</span><span class="n">clear</span><span class="p">()</span>
+<span class="p">{</span>
+
+  <span class="n">ParticleContainer</span><span class="o">::</span><span class="n">clear</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_scales</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_JetConstitScaleMomentum_eta</span>   <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_JetConstitScaleMomentum_phi</span>   <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_JetConstitScaleMomentum_m</span>     <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_JetConstitScaleMomentum_pt</span>    <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+
+    <span class="n">m_JetEMScaleMomentum_eta</span>        <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_JetEMScaleMomentum_phi</span>        <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_JetEMScaleMomentum_m</span>          <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_JetEMScaleMomentum_pt</span>         <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_area</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_GhostArea</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_ActiveArea</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_VoronoiArea</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_ActiveArea4vec_pt</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_ActiveArea4vec_eta</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_ActiveArea4vec_phi</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_ActiveArea4vec_m</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_substructure</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_Split12</span>     <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_Split23</span>     <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_Split34</span>     <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_tau1_wta</span>    <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_tau2_wta</span>    <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_tau3_wta</span>    <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_tau21_wta</span>   <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_tau32_wta</span>   <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_ECF1</span>        <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_ECF2</span>        <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_ECF3</span>        <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_C2</span>          <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_D2</span>          <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_NTrimSubjets</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_NClusters</span>   <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_nTracks</span>     <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituent</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_numConstituents</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituentAll</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_constituentWeights</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_constituent_pt</span>    <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_constituent_eta</span>   <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_constituent_phi</span>   <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_constituent_e</span>     <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_bosonCount</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_nTQuarks</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_nHBosons</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_nWBosons</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_nZBosons</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_muonCorrection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">m_muonCorrected_pt</span> <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_muonCorrected_eta</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_muonCorrected_phi</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="n">m_muonCorrected_m</span>  <span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span><span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">kv</span> <span class="p">:</span> <span class="n">m_trkJets</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">m_trkJets</span>   <span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+      <span class="n">m_trkJetsIdx</span><span class="p">[</span><span class="n">kv</span><span class="p">.</span><span class="n">first</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">clear</span><span class="p">();</span>
+    <span class="p">}</span>
+
+  <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">FatJetContainer</span><span class="o">::</span><span class="n">FillFatJet</span><span class="p">(</span> <span class="k">const</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">*</span> <span class="n">jet</span> <span class="p">){</span>
+  <span class="k">return</span> <span class="n">FillFatJet</span><span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">IParticle</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">jet</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">FatJetContainer</span><span class="o">::</span><span class="n">FillFatJet</span><span class="p">(</span> <span class="k">const</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">IParticle</span><span class="o">*</span> <span class="n">particle</span> <span class="p">){</span>
+
+  <span class="n">ParticleContainer</span><span class="o">::</span><span class="n">FillParticle</span><span class="p">(</span><span class="n">particle</span><span class="p">);</span>
+
+  <span class="k">const</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">*</span> <span class="n">fatjet</span><span class="o">=</span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">particle</span><span class="p">);</span>
+
+  <span class="k">if</span><span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_scales</span> <span class="p">){</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_JetConstitScaleMomentum_eta</span><span class="p">(</span><span class="s">&quot;JetConstitScaleMomentum_eta&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_JetConstitScaleMomentum_eta</span><span class="p">,</span> <span class="n">m_JetConstitScaleMomentum_eta</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_JetConstitScaleMomentum_phi</span><span class="p">(</span><span class="s">&quot;JetConstitScaleMomentum_phi&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_JetConstitScaleMomentum_phi</span><span class="p">,</span> <span class="n">m_JetConstitScaleMomentum_phi</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_JetConstitScaleMomentum_m</span><span class="p">(</span><span class="s">&quot;JetConstitScaleMomentum_m&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_JetConstitScaleMomentum_m</span><span class="p">,</span> <span class="n">m_JetConstitScaleMomentum_m</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_JetConstitScaleMomentum_pt</span><span class="p">(</span><span class="s">&quot;JetConstitScaleMomentum_pt&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_JetConstitScaleMomentum_pt</span><span class="p">,</span> <span class="n">m_JetConstitScaleMomentum_pt</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_JetEMScaleMomentum_eta</span><span class="p">(</span><span class="s">&quot;JetEMScaleMomentum_eta&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_JetEMScaleMomentum_eta</span><span class="p">,</span> <span class="n">m_JetEMScaleMomentum_eta</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_JetEMScaleMomentum_phi</span><span class="p">(</span><span class="s">&quot;JetEMScaleMomentum_phi&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_JetEMScaleMomentum_phi</span><span class="p">,</span> <span class="n">m_JetEMScaleMomentum_phi</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_JetEMScaleMomentum_m</span><span class="p">(</span><span class="s">&quot;JetEMScaleMomentum_m&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_JetEMScaleMomentum_m</span><span class="p">,</span> <span class="n">m_JetEMScaleMomentum_m</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_JetEMScaleMomentum_pt</span><span class="p">(</span><span class="s">&quot;JetEMScaleMomentum_pt&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_JetEMScaleMomentum_pt</span><span class="p">,</span> <span class="n">m_JetEMScaleMomentum_pt</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_area</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_GhostArea</span><span class="p">(</span><span class="s">&quot;GhostArea&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_GhostArea</span><span class="p">,</span> <span class="n">m_GhostArea</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_ActiveArea</span><span class="p">(</span><span class="s">&quot;ActiveArea&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_ActiveArea</span><span class="p">,</span> <span class="n">m_ActiveArea</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_VoronoiArea</span><span class="p">(</span><span class="s">&quot;VoronoiArea&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_VoronoiArea</span><span class="p">,</span> <span class="n">m_VoronoiArea</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_ActiveArea4vec_pt</span><span class="p">(</span><span class="s">&quot;ActiveArea4vec_pt&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_ActiveArea4vec_pt</span><span class="p">,</span> <span class="n">m_ActiveArea4vec_pt</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_ActiveArea4vec_eta</span><span class="p">(</span><span class="s">&quot;ActiveArea4vec_eta&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_ActiveArea4vec_eta</span><span class="p">,</span> <span class="n">m_ActiveArea4vec_eta</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_ActiveArea4vec_phi</span><span class="p">(</span><span class="s">&quot;ActiveArea4vec_phi&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_ActiveArea4vec_phi</span><span class="p">,</span> <span class="n">m_ActiveArea4vec_phi</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_ActiveArea4vec_m</span><span class="p">(</span><span class="s">&quot;ActiveArea4vec_m&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_ActiveArea4vec_m</span><span class="p">,</span> <span class="n">m_ActiveArea4vec_m</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span><span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_substructure</span> <span class="p">){</span>
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_Split12</span><span class="p">(</span><span class="s">&quot;Split12&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_Split12</span><span class="p">,</span> <span class="n">m_Split12</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_Split23</span><span class="p">(</span><span class="s">&quot;Split23&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_Split23</span><span class="p">,</span> <span class="n">m_Split23</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_Split34</span><span class="p">(</span><span class="s">&quot;Split34&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_Split34</span><span class="p">,</span> <span class="n">m_Split34</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_tau1_wta</span> <span class="p">(</span><span class="s">&quot;Tau1_wta&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_tau1_wta</span><span class="p">,</span> <span class="n">m_tau1_wta</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_tau2_wta</span> <span class="p">(</span><span class="s">&quot;Tau2_wta&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_tau2_wta</span><span class="p">,</span> <span class="n">m_tau2_wta</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_tau3_wta</span> <span class="p">(</span><span class="s">&quot;Tau3_wta&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_tau3_wta</span><span class="p">,</span> <span class="n">m_tau3_wta</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_tau21_wta</span> <span class="p">(</span><span class="s">&quot;Tau21_wta&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">acc_tau21_wta</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)){</span>
+      <span class="n">m_tau21_wta</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">acc_tau21_wta</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">acc_tau1_wta</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">acc_tau2_wta</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="n">m_tau21_wta</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">acc_tau2_wta</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="o">/</span> <span class="n">acc_tau1_wta</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="n">m_tau21_wta</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="o">-</span><span class="mi">999</span> <span class="p">);</span> <span class="p">}</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_tau32_wta</span> <span class="p">(</span><span class="s">&quot;Tau32_wta&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">acc_tau32_wta</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)){</span>
+      <span class="n">m_tau32_wta</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">acc_tau32_wta</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">acc_tau2_wta</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">acc_tau3_wta</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="n">m_tau32_wta</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">acc_tau3_wta</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="o">/</span> <span class="n">acc_tau2_wta</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="n">m_tau32_wta</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="o">-</span><span class="mi">999</span> <span class="p">);</span> <span class="p">}</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">acc_NClusters</span> <span class="p">(</span><span class="s">&quot;MyNClusters&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_NClusters</span><span class="p">,</span> <span class="n">m_NClusters</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_ECF1</span> <span class="p">(</span><span class="s">&quot;ECF1&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_ECF1</span><span class="p">,</span> <span class="n">m_ECF1</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_ECF2</span><span class="p">(</span><span class="s">&quot;ECF2&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_ECF2</span><span class="p">,</span> <span class="n">m_ECF2</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_ECF3</span> <span class="p">(</span><span class="s">&quot;ECF3&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">acc_ECF3</span><span class="p">,</span> <span class="n">m_ECF3</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">,</span> <span class="n">m_units</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">NTrimSubjets</span><span class="p">(</span><span class="s">&quot;NTrimSubjets&quot;</span><span class="p">);</span>
+    <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatjet</span><span class="p">,</span> <span class="n">NTrimSubjets</span><span class="p">,</span> <span class="n">m_NTrimSubjets</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_D2</span> <span class="p">(</span><span class="s">&quot;D2&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">acc_D2</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="n">m_D2</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">acc_D2</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">acc_ECF1</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">acc_ECF2</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">acc_ECF3</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)){</span>
+      <span class="kt">float</span> <span class="n">e2</span><span class="o">=</span><span class="p">(</span><span class="n">acc_ECF2</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">acc_ECF1</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span><span class="o">*</span><span class="n">acc_ECF1</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)));</span>
+      <span class="kt">float</span> <span class="n">e3</span><span class="o">=</span><span class="p">(</span><span class="n">acc_ECF3</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">acc_ECF1</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span><span class="o">*</span><span class="n">acc_ECF1</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span><span class="o">*</span><span class="n">acc_ECF1</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)));</span>
+      <span class="n">m_D2</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">e3</span><span class="o">/</span><span class="p">(</span><span class="n">e2</span><span class="o">*</span><span class="n">e2</span><span class="o">*</span><span class="n">e2</span><span class="p">)</span> <span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span><span class="p">{</span> <span class="n">m_D2</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="o">-</span><span class="mi">999</span><span class="p">);</span> <span class="p">}</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">acc_C2</span><span class="p">(</span><span class="s">&quot;C2&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">acc_C2</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">)){</span>
+      <span class="n">m_C2</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">acc_C2</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">acc_ECF1</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">acc_ECF2</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">acc_ECF3</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">)){</span>
+      <span class="n">m_C2</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">acc_ECF3</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">)</span><span class="o">*</span><span class="n">acc_ECF1</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">)</span><span class="o">/</span><span class="n">pow</span><span class="p">(</span><span class="n">acc_ECF2</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">),</span><span class="mf">2.0</span><span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span><span class="p">{</span> <span class="n">m_C2</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="o">-</span><span class="mi">999</span><span class="p">);</span> <span class="p">}</span>
+
+    <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">acc_GhostTrackCount</span><span class="p">(</span><span class="s">&quot;GhostTrackCount&quot;</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">acc_GhostTrackCount</span><span class="p">.</span><span class="n">isAvailable</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="n">m_nTracks</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">acc_GhostTrackCount</span><span class="p">(</span> <span class="o">*</span><span class="n">fatjet</span> <span class="p">));</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="n">m_nTracks</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="o">-</span><span class="mi">999</span><span class="p">);</span> <span class="p">}</span>
+
+  <span class="p">}</span>
+
+  <span class="k">if</span><span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituent</span> <span class="p">){</span>
+    <span class="n">m_numConstituents</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">fatjet</span><span class="o">-&gt;</span><span class="n">numConstituents</span><span class="p">()</span> <span class="p">);</span>
+  <span class="p">}</span>
+
+
+  <span class="k">if</span><span class="p">(</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_constituentAll</span> <span class="p">){</span>
+    <span class="n">m_constituentWeights</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">fatjet</span><span class="o">-&gt;</span><span class="n">getAttribute</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span> <span class="s">&quot;constituentWeights&quot;</span> <span class="p">)</span> <span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">pt</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">eta</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">phi</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span> <span class="n">e</span><span class="p">;</span>
+    <span class="n">xAOD</span><span class="o">::</span><span class="n">JetConstituentVector</span> <span class="n">consVec</span> <span class="o">=</span> <span class="n">fatjet</span><span class="o">-&gt;</span><span class="n">getConstituents</span><span class="p">();</span>
+
+    <span class="k">if</span><span class="p">(</span> <span class="n">consVec</span><span class="p">.</span><span class="n">isValid</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span>
+
+      <span class="c1">// use the example provided in</span>
+      <span class="c1">// http://acode-browser.usatlas.bnl.gov/lxr/source/atlas/Event/xAOD/xAODJet/xAODJet/JetConstituentVector.h</span>
+      <span class="n">xAOD</span><span class="o">::</span><span class="n">JetConstituentVector</span><span class="o">::</span><span class="n">iterator</span> <span class="n">constit</span> <span class="o">=</span> <span class="n">consVec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+      <span class="n">xAOD</span><span class="o">::</span><span class="n">JetConstituentVector</span><span class="o">::</span><span class="n">iterator</span> <span class="n">constitE</span> <span class="o">=</span> <span class="n">consVec</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+      <span class="k">for</span><span class="p">(</span> <span class="p">;</span> <span class="n">constit</span> <span class="o">!=</span> <span class="n">constitE</span><span class="p">;</span> <span class="n">constit</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">pt</span><span class="p">.</span> <span class="n">push_back</span><span class="p">(</span> <span class="n">constit</span><span class="o">-&gt;</span><span class="n">pt</span><span class="p">()</span> <span class="o">/</span> <span class="n">m_units</span> <span class="p">);</span>
+    <span class="n">eta</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">constit</span><span class="o">-&gt;</span><span class="n">eta</span><span class="p">()</span> <span class="p">);</span>
+    <span class="n">phi</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">constit</span><span class="o">-&gt;</span><span class="n">phi</span><span class="p">()</span> <span class="p">);</span>
+    <span class="n">e</span><span class="p">.</span>  <span class="n">push_back</span><span class="p">(</span> <span class="n">constit</span><span class="o">-&gt;</span><span class="n">e</span><span class="p">()</span> <span class="o">/</span> <span class="n">m_units</span>  <span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">m_constituent_pt</span> <span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">pt</span>  <span class="p">);</span>
+    <span class="n">m_constituent_eta</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">eta</span> <span class="p">);</span>
+    <span class="n">m_constituent_phi</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">phi</span> <span class="p">);</span>
+    <span class="n">m_constituent_e</span>  <span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span> <span class="n">e</span>   <span class="p">);</span>
+  <span class="p">}</span>
+
+
+  <span class="k">if</span><span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_bosonCount</span><span class="p">){</span>
+
+    <span class="k">const</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">*</span> <span class="n">fatJetParentJet</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">try</span><span class="p">{</span>
+      <span class="k">auto</span> <span class="n">el</span> <span class="o">=</span> <span class="n">fatjet</span><span class="o">-&gt;</span><span class="n">auxdata</span><span class="o">&lt;</span><span class="n">ElementLink</span><span class="o">&lt;</span><span class="n">xAOD</span><span class="o">::</span><span class="n">JetContainer</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Parent&quot;</span><span class="p">);</span>
+      <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">el</span><span class="p">.</span><span class="n">isValid</span><span class="p">()){</span>
+        <span class="c1">//Warning(&quot;executeSingle()&quot;, &quot;Invalid link to \&quot;Parent\&quot; from fat-jet.&quot;);</span>
+      <span class="p">}</span>
+      <span class="k">else</span><span class="p">{</span>
+    <span class="n">fatJetParentJet</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">el</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span><span class="k">catch</span><span class="p">(...){</span>
+      <span class="c1">//Warning(&quot;executeSingle()&quot;, &quot;Unable to get parent jet of fat-jet for truth labeling. Trimmed jet area would be used!&quot;);</span>
+      <span class="n">fatJetParentJet</span> <span class="o">=</span> <span class="n">fatjet</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">m_mc</span><span class="p">){</span>
+      <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span> <span class="n">truthfatjet_TQuarks</span><span class="p">(</span><span class="s">&quot;GhostTQuarksFinalCount&quot;</span><span class="p">);</span>
+      <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatJetParentJet</span><span class="p">,</span> <span class="n">truthfatjet_TQuarks</span><span class="p">,</span> <span class="n">m_nTQuarks</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+
+      <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span> <span class="n">truthfatjet_WBosons</span><span class="p">(</span><span class="s">&quot;GhostWBosonsCount&quot;</span><span class="p">);</span>
+      <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatJetParentJet</span><span class="p">,</span> <span class="n">truthfatjet_WBosons</span><span class="p">,</span> <span class="n">m_nWBosons</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+
+      <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span> <span class="n">truthfatjet_ZBosons</span><span class="p">(</span><span class="s">&quot;GhostZBosonsCount&quot;</span><span class="p">);</span>
+      <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatJetParentJet</span><span class="p">,</span> <span class="n">truthfatjet_ZBosons</span><span class="p">,</span> <span class="n">m_nZBosons</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+
+      <span class="k">static</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="o">&gt;</span> <span class="n">truthfatjet_HBosons</span><span class="p">(</span><span class="s">&quot;GhostHBosonsCount&quot;</span><span class="p">);</span>
+      <span class="n">safeFill</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">fatJetParentJet</span><span class="p">,</span> <span class="n">truthfatjet_HBosons</span><span class="p">,</span> <span class="n">m_nHBosons</span><span class="p">,</span> <span class="o">-</span><span class="mi">999</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_muonCorrection</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="k">const</span> <span class="n">SG</span><span class="o">::</span><span class="n">AuxElement</span><span class="o">::</span><span class="n">ConstAccessor</span><span class="o">&lt;</span><span class="n">TLorentzVector</span><span class="o">&gt;</span> <span class="n">acc_correctedFatJets_tlv</span><span class="p">(</span><span class="s">&quot;correctedFatJets_tlv&quot;</span><span class="p">);</span>
+      <span class="n">m_muonCorrected_pt</span> <span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">acc_correctedFatJets_tlv</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">).</span><span class="n">Pt</span><span class="p">()</span> <span class="o">/</span> <span class="n">m_units</span><span class="p">);</span>
+      <span class="n">m_muonCorrected_eta</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">acc_correctedFatJets_tlv</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">).</span><span class="n">Eta</span><span class="p">());</span>
+      <span class="n">m_muonCorrected_phi</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">acc_correctedFatJets_tlv</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">).</span><span class="n">Phi</span><span class="p">());</span>
+      <span class="n">m_muonCorrected_m</span>  <span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">acc_correctedFatJets_tlv</span><span class="p">(</span><span class="o">*</span><span class="n">fatjet</span><span class="p">).</span><span class="n">M</span><span class="p">()</span>  <span class="o">/</span> <span class="n">m_units</span><span class="p">);</span>
+  <span class="p">}</span>
+
+
+  <span class="c1">//</span>
+  <span class="c1">// Associated track jets</span>
+  <span class="c1">//</span>
+  <span class="k">if</span><span class="p">(</span> <span class="o">!</span><span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_trackJetNames</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="p">){</span>
+
+    <span class="c1">// Find the fat jet parent</span>
+    <span class="k">const</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">*</span> <span class="n">fatjet_parent</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">try</span><span class="p">{</span>
+      <span class="k">auto</span> <span class="n">el</span> <span class="o">=</span> <span class="n">fatjet</span><span class="o">-&gt;</span><span class="n">auxdata</span><span class="o">&lt;</span><span class="n">ElementLink</span><span class="o">&lt;</span><span class="n">xAOD</span><span class="o">::</span><span class="n">JetContainer</span><span class="o">&gt;</span> <span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Parent&quot;</span><span class="p">);</span>
+      <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">el</span><span class="p">.</span><span class="n">isValid</span><span class="p">()){</span>
+        <span class="c1">//Warning(&quot;execute()&quot;, &quot;Invalid link to \&quot;Parent\&quot; from leading calo-jet&quot;);</span>
+      <span class="p">}</span>
+      <span class="k">else</span><span class="p">{</span>
+    <span class="n">fatjet_parent</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">el</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(...){</span>
+      <span class="c1">//Warning(&quot;execute()&quot;, &quot;Unable to fetch \&quot;Parent\&quot; link from leading calo-jet&quot;);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">fatjet_parent</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+      <span class="c1">//Warning(&quot;execute()&quot;, &quot;Trimmed jet area will be used for leading calo-jet&quot;);</span>
+      <span class="n">fatjet_parent</span> <span class="o">=</span> <span class="n">fatjet</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Associate the different track jet collections</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">*&gt;</span> <span class="n">assotrkjets</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="nl">trackJetName</span> <span class="p">:</span> <span class="n">m_infoSwitch</span><span class="p">.</span><span class="n">m_trackJetNames</span><span class="p">)</span>
+      <span class="p">{</span>
+    <span class="k">try</span><span class="p">{</span>
+      <span class="n">assotrkjets</span> <span class="o">=</span> <span class="n">fatjet_parent</span><span class="o">-&gt;</span><span class="n">getAssociatedObjects</span><span class="o">&lt;</span><span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">&gt;</span><span class="p">(</span><span class="n">trackJetName</span><span class="p">);</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">sort</span><span class="p">(</span> <span class="n">assotrkjets</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">assotrkjets</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">HelperFunctions</span><span class="o">::</span><span class="n">sort_pt</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(...){</span>
+      <span class="c1">//Warning(&quot;execute()&quot;, &quot;Unable to fetch \&quot;%s\&quot; link from leading calo-jet&quot;, trackJetName.data());</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">trkJetsIdx</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">TrackJet</span> <span class="p">:</span> <span class="n">assotrkjets</span><span class="p">){</span>
+      <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">SelectTrackJet</span><span class="p">(</span><span class="n">TrackJet</span><span class="p">))</span> <span class="k">continue</span><span class="p">;</span>
+      <span class="n">trkJetsIdx</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">m_trkJets</span><span class="p">[</span><span class="n">trackJetName</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">m_n</span><span class="p">);</span>
+      <span class="n">m_trkJets</span><span class="p">[</span><span class="n">trackJetName</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">FillJet</span><span class="p">(</span><span class="n">TrackJet</span><span class="p">,</span> <span class="mi">0</span> <span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">m_trkJetsIdx</span><span class="p">[</span><span class="n">trackJetName</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">trkJetsIdx</span><span class="p">);</span>
+      <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">bool</span> <span class="n">FatJetContainer</span><span class="o">::</span><span class="n">SelectTrackJet</span><span class="p">(</span><span class="k">const</span> <span class="n">xAOD</span><span class="o">::</span><span class="n">Jet</span><span class="o">*</span> <span class="n">TrackJet</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span> <span class="n">TrackJet</span><span class="o">-&gt;</span><span class="n">pt</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">m_trackJetPtCut</span> <span class="p">)</span>            <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span> <span class="n">fabs</span><span class="p">(</span><span class="n">TrackJet</span><span class="o">-&gt;</span><span class="n">eta</span><span class="p">())</span> <span class="o">&gt;</span> <span class="n">m_trackJetEtaCut</span> <span class="p">)</span>    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span> <span class="n">TrackJet</span><span class="o">-&gt;</span><span class="n">numConstituents</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="p">)</span>             <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015-2017, ATLAS Collaboration
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
