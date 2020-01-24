@@ -51,6 +51,9 @@ namespace xAH {
       float  EMFrac;
       int    nChargedParticles;
 
+      // davide
+      float ANN_score;
+
       // constituent
       int    numConstituents;
 
