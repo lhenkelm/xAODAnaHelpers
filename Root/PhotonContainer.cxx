@@ -210,19 +210,29 @@ void PhotonContainer::updateParticle(uint idx, Photon& photon)
 
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "20") != m_infoSwitch.m_isoCones.end()){
     photon.ptcone20 =                   m_ptcone20                  ->at(idx);
+    /* uncommented as per davide (apparently these are missing from (some of) the input ntuples)
     photon.topoetcone20 =               m_topoetcone20              ->at(idx);
+    photon.ptcone30 =                   m_ptcone30                  ->at(idx);
+    photon.ptcone40 =                   m_ptcone40                  ->at(idx);
     photon.ptvarcone20 =                m_ptvarcone20               ->at(idx);
+    */
     photon.isIsolated_Cone20 =          m_isIsolated_Cone20         ->at(idx);
   }
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "30") != m_infoSwitch.m_isoCones.end()){
+    /* uncommented as per davide (apparently these are missing from (some of) the input ntuples)
     photon.ptcone30 =                   m_ptcone30                  ->at(idx);
     photon.topoetcone30 =               m_topoetcone30              ->at(idx);
+    
     photon.ptvarcone30 =                m_ptvarcone30               ->at(idx);
+    */
   }
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "40") != m_infoSwitch.m_isoCones.end()){
+    
+    /* uncommented as per davide (apparently these are missing from (some of) the input ntuples)
     photon.ptcone40 =                   m_ptcone40                  ->at(idx);
     photon.ptvarcone40 =                m_ptvarcone40               ->at(idx);
     photon.topoetcone40 =               m_topoetcone40              ->at(idx);
+    */
     photon.isIsolated_Cone40CaloOnly =  m_isIsolated_Cone40CaloOnly ->at(idx);
     photon.isIsolated_Cone40 =          m_isIsolated_Cone40         ->at(idx);
   }
