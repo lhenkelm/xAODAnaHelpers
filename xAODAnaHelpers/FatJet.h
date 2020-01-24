@@ -48,6 +48,9 @@ namespace xAH {
       int    NClusters;
       int    nTracks;
 
+      // davide
+      float ANN_score;
+
       // constituent
       int    numConstituents;
 
