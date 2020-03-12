@@ -10,6 +10,7 @@
 #include <xAODAnaHelpers/HelperClasses.h>
 #include <xAODAnaHelpers/HelperFunctions.h>
 
+#include <xAODAnaHelpers/Lumberjack.h>
 #include <xAODAnaHelpers/Particle.h>
 #include <xAODBase/IParticle.h>
 
@@ -126,16 +127,13 @@ namespace xAH
 	  else          m_E->push_back  ( particle->e() / m_units );
 	}
       }
-
       void updateEntry()
       {
         m_particles.resize(m_n);
-        std::cout << __FILE__ << ":" << __LINE__ <<  "in " << __func__ << ": "
-                  << "resized m_particles to " << m_n << std::endl;
+        LOG_ME_THIS("resized m_particles to " << m_n );
         for(int i=0;i<m_n;i++)
         {
-          std::cout << __FILE__ << ":" << __LINE__ <<  "in " << __func__ << ": "
-                    << "about to update particle no. " << i << std::endl;
+          LOG_ME_THIS("about to update particle no. " << i );
 	        updateParticle(i,m_particles[i]);
         }
       }
@@ -230,14 +228,12 @@ namespace xAH
 	        }
 	      }
         
-        std::cout << __FILE__ << ":" << __LINE__ <<  "in " << __func__ << ": "
-                  << "updated particle no " << idx << std::endl;
+        LOG_ME_THIS("updated particle no " << idx);
       }
 
       std::string m_name;
 
       std::vector<T_PARTICLE> m_particles;
-
     public:
       T_INFOSWITCH m_infoSwitch;
       bool m_mc;
