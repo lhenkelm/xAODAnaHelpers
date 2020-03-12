@@ -1473,7 +1473,7 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
 	  jet.SF_DL1rnn_FixedCutBEff_77=(m_mc)?btag->m_sf   ->at(idx):dummy1;
 	  break;
 	case Jet::BTaggerOP::DL1rnn_FixedCutBEff_85:
-	  LOG_ME_THIS("case Jet::BTaggerOP::DL1rnn_FixedCutBEff_77");
+	  LOG_ME_THIS("case Jet::BTaggerOP::DL1rnn_FixedCutBEff_85");
 	  jet.is_DL1rnn_FixedCutBEff_85=       btag->m_isTag->at(idx);
 	  jet.SF_DL1rnn_FixedCutBEff_85=(m_mc)?btag->m_sf   ->at(idx):dummy1;
 	  break;
