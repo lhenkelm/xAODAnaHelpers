@@ -130,9 +130,14 @@ namespace xAH
       void updateEntry()
       {
         m_particles.resize(m_n);
-
+        std::cout << __FILE__ << ":" << __LINE__ <<  "in " << __func__ << ": "
+                  << "resized m_particles to " << m_n << std::endl;
         for(int i=0;i<m_n;i++)
-	  updateParticle(i,m_particles[i]);
+        {
+          std::cout << __FILE__ << ":" << __LINE__ <<  "in " << __func__ << ": "
+                    << "about to update particle no. " << i << std::endl;
+	        updateParticle(i,m_particles[i]);
+        }
       }
       
       std::vector<T_PARTICLE>& particles()
@@ -210,20 +215,23 @@ namespace xAH
       virtual void updateParticle(uint idx, T_PARTICLE& particle)
       {
         if(m_infoSwitch.m_kinematic)
-          {
-	    if(m_useMass){
-	      particle.p4.SetPtEtaPhiM(m_pt ->at(idx),
+        {
+	        if(m_useMass){
+	          particle.p4.SetPtEtaPhiM(m_pt ->at(idx),
 				       m_eta->at(idx),
 				       m_phi->at(idx),
 				       m_M  ->at(idx));
 
-	    } else{
-	      particle.p4.SetPtEtaPhiE(m_pt ->at(idx),
+	        } else{
+	          particle.p4.SetPtEtaPhiE(m_pt ->at(idx),
 				       m_eta->at(idx),
 				       m_phi->at(idx),
 				       m_E  ->at(idx));
-	    }
-	  }
+	        }
+	      }
+        
+        std::cout << __FILE__ << ":" << __LINE__ <<  "in " << __func__ << ": "
+                  << "updated particle no " << idx << std::endl;
       }
 
       std::string m_name;
