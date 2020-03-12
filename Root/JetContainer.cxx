@@ -2,6 +2,7 @@
 #include <xAODAnaHelpers/HelperFunctions.h>
 #include <iostream>
 #include "xAODTruth/TruthEventContainer.h"
+#include "xAODAnaHelpers/Lumberjack.h" // LOG_ME_THIS macro
 
 using namespace xAH;
 
@@ -1143,100 +1144,172 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
 
   if(m_infoSwitch.m_rapidity)
     {
+      LOG_ME_THIS("entering m_rapidity conditional block ");
       jet.rapidity                    =m_rapidity                    ->at(idx);
+      LOG_ME_THIS("updated jet rapidity for no. " << idx);
     }
 
   // trigger
   if ( m_infoSwitch.m_trigger ) {
+    LOG_ME_THIS("entering m_trigger conditional block ");
     jet.isTrigMatched         =     m_isTrigMatched         ->at(idx);
+    LOG_ME_THIS("updated jet.isTrigMatched for no. " << idx);
     jet.isTrigMatchedToChain  =     m_isTrigMatchedToChain  ->at(idx);
+    LOG_ME_THIS("updated jet.isTrigMatchedToChain for no. " << idx);
     jet.listTrigChains        =     m_listTrigChains        ->at(idx);
+    LOG_ME_THIS("updated jet.listTrigChains for no. " << idx);
   }
 
   if(m_infoSwitch.m_clean || m_infoSwitch.m_cleanLight)
     {
+      LOG_ME_THIS("entering m_cleani || m_cleanLight conditional block ");
       if(m_debug) std::cout << "updating clean " << std::endl;
       if(m_infoSwitch.m_clean){
+        LOG_ME_THIS("entering m_clean conditional block ");
         jet.Timing                    =m_Timing                    ->at(idx);
+        LOG_ME_THIS("updated jet.Timing for no. " << idx);
         jet.LArQuality                =m_LArQuality                ->at(idx);
+        LOG_ME_THIS("updated jet.LArQuality for no. " << idx);
         jet.HECQuality                =m_HECQuality                ->at(idx);
+        LOG_ME_THIS("updated jet.HECQuality for no. " << idx);
         jet.NegativeE                 =m_NegativeE                 ->at(idx);
+        LOG_ME_THIS("updated jet.NegativeE for no. " << idx);
         jet.AverageLArQF              =m_AverageLArQF              ->at(idx);
+        LOG_ME_THIS("updated jet.AverageLArQF for no. " << idx);
         jet.BchCorrCell               =m_BchCorrCell               ->at(idx);
+        LOG_ME_THIS("updated jet.BchCorrCell for no. " << idx);
         jet.N90Constituents           =m_N90Constituents           ->at(idx);
+        LOG_ME_THIS("updated jet.N90Constituents for no. " << idx);
         jet.LArBadHVEFrac             =m_LArBadHVEnergyFrac       ->at(idx);
+        LOG_ME_THIS("updated jet.LArBadHVEFrac for no. " << idx);
         jet.LArBadHVNCell             =m_LArBadHVNCell             ->at(idx);
+        LOG_ME_THIS("updated jet.LArBadHVNCell for no. " << idx);
         jet.OotFracClusters5          =m_OotFracClusters5          ->at(idx);
+        LOG_ME_THIS("updated jet.OotFracClusters5 for no. " << idx);
         jet.OotFracClusters10         =m_OotFracClusters10         ->at(idx);
+        LOG_ME_THIS("updated jet.OotFracClusters10 for no. " << idx);
         jet.LeadingClusterPt          =m_LeadingClusterPt          ->at(idx);
+        LOG_ME_THIS("updated jet.OotFracClusters5 for no. " << idx);
         jet.LeadingClusterSecondLambda=m_LeadingClusterSecondLambda->at(idx);
+        LOG_ME_THIS("updated jet.LeadingClusterSecondLambda for no. " << idx);
         jet.LeadingClusterCenterLambda=m_LeadingClusterCenterLambda->at(idx);
+        LOG_ME_THIS("updated jet.LeadingClusterCenterLambda for no. " << idx);
         jet.LeadingClusterSecondR     =m_LeadingClusterSecondR     ->at(idx);
+        LOG_ME_THIS("updated jet.LeadingClusterSecondR for no. " << idx);
         if(m_infoSwitch.m_cleanTrig) {
           jet.clean_passLooseBadTriggerUgly =m_clean_passLooseBadTriggerUgly    ->at(idx);
+          LOG_ME_THIS("updated jet.clean_passLooseBadTriggerUgly for no. " << idx);
         }
         else {
+          LOG_ME_THIS("entering NOT m_clean conditional block ");
           jet.clean_passLooseBadUgly    =m_clean_passLooseBadUgly    ->at(idx);
+          LOG_ME_THIS("updated jet.clean_passLooseBadUgly for no. " << idx);
           jet.clean_passTightBadUgly    =m_clean_passTightBadUgly    ->at(idx);
+          LOG_ME_THIS("updated jet.clean_passTightBadUgly for no. " << idx);
         }
       }
       if(m_infoSwitch.m_cleanTrig) {
+        LOG_ME_THIS("entering m_cleanTrig conditional block ");
         jet.clean_passLooseBadTrigger =m_clean_passLooseBadTrigger ->at(idx);
+        LOG_ME_THIS("updated jet.clean_passLooseBadTrigger for no. " << idx);
       }
       else {
+        LOG_ME_THIS("entering NOT m_cleanTrig conditional block ");
         jet.clean_passLooseBad        =m_clean_passLooseBad        ->at(idx);
+        LOG_ME_THIS("updated jet.clean_passLooseBad for no. " << idx);
         jet.clean_passTightBad        =m_clean_passTightBad        ->at(idx);
+        LOG_ME_THIS("updated jet.clean_passTightBad for no. " << idx);
       }
     }
 
   if(m_infoSwitch.m_energy || m_infoSwitch.m_energyLight)
-    {
+  {
+      LOG_ME_THIS("entering m_energy || m_energyLight conditional block ");
       if(m_debug) std::cout << "updating energy " << std::endl;
       if ( m_infoSwitch.m_energy ){
+        LOG_ME_THIS("entering m_energy conditional block ");
         jet.HECFrac              =m_HECFrac              ->at(idx);
+        LOG_ME_THIS("updated jet.HECFrac for no. " << idx);
         jet.CentroidR            =m_CentroidR            ->at(idx);
+        LOG_ME_THIS("updated jet.CentroidR for no. " << idx);
         jet.LowEtConstituentsFrac=m_LowEtConstituentsFrac->at(idx);
+        LOG_ME_THIS("updated jet.LowEtConstituentsFrac for no. " << idx);
       }
       jet.EMFrac               =m_EMFrac               ->at(idx);
+      LOG_ME_THIS("updated jet.EMFrac for no. " << idx);
       jet.FracSamplingMax      =m_FracSamplingMax      ->at(idx);
+      LOG_ME_THIS("updated jet.FracSamplingMax for no. " << idx);
       jet.FracSamplingMaxIndex =m_FracSamplingMaxIndex ->at(idx);
+      LOG_ME_THIS("updated jet.FracSamplingMaxIndex for no. " << idx);
       jet.GhostMuonSegmentCount=m_GhostMuonSegmentCount->at(idx);
+      LOG_ME_THIS("updated jet.GhostMuonSegmentCount for no. " << idx);
       jet.Width                =m_Width                ->at(idx);
-    }
+      LOG_ME_THIS("updated jet.Width for no. " << idx);
+  }
 
   if(m_infoSwitch.m_trackPV)
     {
+      LOG_ME_THIS("entering m_trackPV conditional block ");
       jet.NumTrkPt1000PV    =m_NumTrkPt1000PV    ->at(idx);
+      LOG_ME_THIS("updated jet.NumTrkPt1000PV for no. " << idx);
       jet.SumPtTrkPt1000PV  =m_SumPtTrkPt1000PV  ->at(idx);
+      LOG_ME_THIS("updated jet.SumPtTrkPt1000PV for no. " << idx);
       jet.TrackWidthPt1000PV=m_TrackWidthPt1000PV->at(idx);
+      LOG_ME_THIS("updated jet.TrackWidthPt1000PV for no. " << idx);
       jet.NumTrkPt500PV     =m_NumTrkPt500PV     ->at(idx);
+      LOG_ME_THIS("updated jet.NumTrkPt500PV for no. " << idx);
+      jet.NumTrkPt500PV     =m_NumTrkPt500PV     ->at(idx);
+      LOG_ME_THIS("updated jet.NumTrkPt500PV (again) for no. " << idx);
       jet.SumPtTrkPt500PV   =m_SumPtTrkPt500PV   ->at(idx);
+      LOG_ME_THIS("updated jet.SumTrkPt500PV for no. " << idx);
       jet.TrackWidthPt500PV =m_TrackWidthPt500PV ->at(idx);
+      LOG_ME_THIS("updated jet.TrackWidthPt500PV for no. " << idx);
       jet.JVFPV             =m_JVFPV             ->at(idx);
+      LOG_ME_THIS("updated jet.JVFPV for no. " << idx);
     }
 
   if(m_infoSwitch.m_trackPV || m_infoSwitch.m_trackAll || m_infoSwitch.m_jvt)
     {
+      LOG_ME_THIS("entering m_trackPV  || m_trackAll || m_jvt conditional block ");
       if(m_infoSwitch.m_trackPV || m_infoSwitch.m_trackAll){
         jet.JvtJvfcorr=m_JvtJvfcorr->at(idx);
+        LOG_ME_THIS("updated jet.JvtJvfcorr for no. " << idx);
         jet.JvtRpt    =m_JvtRpt    ->at(idx);
+        LOG_ME_THIS("updated jet.JvtRpt for no. " << idx);
       }
       jet.Jvt       =m_Jvt       ->at(idx);
+      LOG_ME_THIS("updated jet.Jvt for no. " << idx);
     }
 
   if( m_infoSwitch.m_JVC ) {
+    LOG_ME_THIS("entering m_JVC conditional block ");
     if(m_debug) std::cout << "updating JVC " << std::endl;
-    if(m_debug) std::cout << m_JetVertexCharge_discriminant->size() << std::endl;
+    if(m_debug) std::cout << m_JetVertexCharge_discriminant->size() << std::endl; // someone saw this previously?
     jet.JVC = m_JetVertexCharge_discriminant->at(idx);
+    LOG_ME_THIS("updated jet.JVC for no. " << idx);
   }
 
   if(m_infoSwitch.m_flavorTag  || m_infoSwitch.m_flavorTagHLT)
     {
+      LOG_ME_THIS("entering m_flavorTag || m_flavorTagHLT conditional block ");
       if(m_debug) std::cout << "updating flavorTag " << std::endl;
       jet.MV2c00                    =m_MV2c00               ->at(idx);
+      LOG_ME_THIS("updated jet.MV2c00 for no. " << idx);
       jet.MV2c10                    =m_MV2c10               ->at(idx);
-      if(m_MV2c10mu)  jet.MV2c10mu  =m_MV2c10mu             ->at(idx);
-      if(m_MV2c10rnn) jet.MV2c10rnn =m_MV2c10rnn            ->at(idx);
+      LOG_ME_THIS("updated jet.MV2c10 for no. " << idx);
+      if(m_MV2c10mu)
+      {
+        LOG_ME_THIS("entering m_MV2c10mu conditional block ");
+        jet.MV2c10mu  =m_MV2c10mu             ->at(idx);
+        LOG_ME_THIS("updated jet.MV2c10mu for no. " << idx);
+      }
+      if(m_MV2c10rnn)
+      {
+        LOG_ME_THIS("entering m_MV2c10rnn conditional block ");
+        jet.MV2c10rnn =m_MV2c10rnn            ->at(idx);
+        LOG_ME_THIS("updated jet.MV2c10rnn for no. " << idx);
+      }
+      // i'll litter these if needed only
       if(m_MV2rmu)    jet.MV2rmu    =m_MV2rmu               ->at(idx);
       if(m_MV2r)      jet.MV2r      =m_MV2r                 ->at(idx);
       jet.MV2c20                    =m_MV2c20               ->at(idx);
@@ -1265,11 +1338,13 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
       if(m_HadronConeExclTruthLabelID)         jet.HadronConeExclTruthLabelID        =m_HadronConeExclTruthLabelID        ->at(idx);
       if(m_HadronConeExclExtendedTruthLabelID) jet.HadronConeExclExtendedTruthLabelID=m_HadronConeExclExtendedTruthLabelID->at(idx);
       if(m_debug) std::cout << "leave flavorTag " << std::endl;
+      LOG_ME_THIS("leaving m_flavorTag || m_flavorTagHLT conditional block ");
     }
 
 
   if(m_infoSwitch.m_flavorTagHLT)
     {
+      LOG_ME_THIS("entering m_flavorTagHLT conditional block ");
       if(m_debug) std::cout << "updating flavorTagHLT " << std::endl;
       jet.bs_online_vx                      =m_bs_online_vx                  ->at(idx);
       jet.bs_online_vy                      =m_bs_online_vy                  ->at(idx);
@@ -1286,11 +1361,13 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
       jet.vtx_online_bkg_x0                     =m_vtx_online_bkg_x0                  ->at(idx);
       jet.vtx_online_bkg_y0                     =m_vtx_online_bkg_y0                  ->at(idx);
       jet.vtx_online_bkg_z0                     =m_vtx_online_bkg_z0                  ->at(idx);
+      LOG_ME_THIS("leaving m_flavorTagHLT conditional block ");
 
     }
 
   if(m_infoSwitch.m_jetFitterDetails)
     {
+      LOG_ME_THIS("entering m_jetFitterDetails conditional block ");
       jet.JetFitter_nVTX                  =m_JetFitter_nVTX           ->at(idx);
       jet.JetFitter_nSingleTracks         =m_JetFitter_nSingleTracks  ->at(idx);
       jet.JetFitter_nTracksAtVtx          =m_JetFitter_nTracksAtVtx   ->at(idx);
@@ -1300,11 +1377,13 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
       jet.JetFitter_deltaeta              =m_JetFitter_deltaeta       ->at(idx);
       jet.JetFitter_deltaphi              =m_JetFitter_deltaphi       ->at(idx);
       jet.JetFitter_N2Tpar                =m_JetFitter_N2Tpar         ->at(idx);
+      LOG_ME_THIS("leaving m_jetFitterDetails conditional block ");
 
     }
 
   if(m_infoSwitch.m_svDetails){
 
+    LOG_ME_THIS("entering m_svDetails conditional block ");
     jet.SV0            = m_SV0           ->at(idx);
     jet.sv0_NGTinSvx   = m_sv0_NGTinSvx  ->at(idx);
     jet.sv0_N2Tpair    = m_sv0_N2Tpair   ->at(idx);
@@ -1331,9 +1410,11 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
     jet.sv1_L3d        = m_sv1_L3d       ->at(idx);
     jet.sv1_distmatlay = m_sv1_distmatlay->at(idx);
     jet.sv1_dR         = m_sv1_dR        ->at(idx);
+    LOG_ME_THIS("leaving m_svDetails conditional block ");
   }
 
   if(m_infoSwitch.m_ipDetails){
+    LOG_ME_THIS("entering m_ipDetails conditional block ");
     jet.IP2D_pu                          = m_IP2D_pu                   ->at(idx);
     jet.IP2D_pb                          = m_IP2D_pb                   ->at(idx);
     jet.IP2D_pc                          = m_IP2D_pc                   ->at(idx);
@@ -1366,8 +1447,11 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
     jet.IP3D_weightBofTracks             = m_IP3D_weightBofTracks      ->at(idx);
     jet.IP3D_weightCofTracks             = m_IP3D_weightCofTracks      ->at(idx);
     jet.IP3D_weightUofTracks             = m_IP3D_weightUofTracks      ->at(idx);
+    LOG_ME_THIS("leaving m_ipDetails conditional block ");
+
   }
 
+  LOG_ME_THIS("entering huge B-tags switch statement");
   static const std::vector<float> dummy1 = {1.};
   for(auto btag : m_btags)
     {
@@ -1748,11 +1832,13 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
 	default:
 	  break;
 	}
-    }
+    } 
+  LOG_ME_THIS("hundreds of copy-pasted lines later, leave the  huge B-tags switch statement");
 
   // truth
   if(m_infoSwitch.m_truth)
     {
+      LOG_ME_THIS("entering m_truth conditional block");
       jet.ConeTruthLabelID  =m_ConeTruthLabelID->at(idx);
       jet.TruthCount        =m_TruthCount      ->at(idx);
       jet.TruthLabelDeltaR_B=m_TruthLabelDeltaR_B->at(idx);
@@ -1765,16 +1851,24 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
                                 m_truth_eta->at(idx),
                                 m_truth_phi->at(idx),
                                 m_truth_E  ->at(idx));
+      LOG_ME_THIS("leaving m_truth conditional block");
     }
 
   // charge
   if(m_infoSwitch.m_charge)
-    {
-      jet.charge=m_charge->at(idx);
-    }
+  {
+    LOG_ME_THIS("entering m_charge conditional block");
+    jet.charge=m_charge->at(idx);
+    LOG_ME_THIS("leaving m_charge conditional block");
+  }
 
   // passSel
-  if(m_infoSwitch.m_passSel) jet.passSel=m_passSel->at(idx);
+  if(m_infoSwitch.m_passSel)
+  {
+    LOG_ME_THIS("entering m_passSel conditional block");
+    jet.passSel=m_passSel->at(idx);
+    LOG_ME_THIS("leaving m_passSel conditional block");
+  }
 
   if(m_debug) std::cout << "leave JetContainer::updateParticle " << std::endl;
   return;
