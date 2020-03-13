@@ -580,8 +580,9 @@ namespace xAH {
         }
 
 
-        void setBranch(TTree *tree, std::string jetName) {
-	  if(m_old) return; // DEPRICATED
+        void setBranch(TTree *tree, std::string jetName) 
+        {
+	        if(m_old) return; // DEPRECATED
 
           std::string id = m_isContinuous ? "_Quantile_" : "_is_";
           tree->Branch((jetName+id+m_accessorName).c_str(), &m_isTag);
@@ -594,16 +595,18 @@ namespace xAH {
         }
 
 
-        void clear() {
-	  if(m_old) return; // DEPRICATED
+        void clear()
+        {
+	        if(m_old) return; // DEPRECATED
           m_isTag->clear();
           m_sf->clear();
           if(m_isContinuous)
             m_ineffSf->clear();
         }
 
-        void Fill( const xAOD::Jet* jet ) {
-	  if(m_old) return; // DEPRICATED
+        void Fill( const xAOD::Jet* jet )
+        {
+	        if(m_old) return; // DEPRECATED
 
           static const std::vector<float> junk(1,-999);
 
