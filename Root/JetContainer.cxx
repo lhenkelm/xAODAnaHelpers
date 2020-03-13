@@ -1819,7 +1819,7 @@ void JetContainer::updateParticle(uint idx, Jet& jet)
 	  break;
 	case Jet::BTaggerOP::MV2c10_FixedCutBEff_30:
 	  LOG_ME_THIS("case Jet::BTaggerOP::MV2c10_FixedCutBEff_30");
-	  jet.is_mv2c10_fixedcutbeff_30=       btag->m_isTag->at(idx);
+	  jet.is_MV2c10_FixedCutBEff_30=       btag->m_isTag->at(idx);
 	  LOG_ME_THIS("updated jet.is_mv2c10_fixedcutbeff_30 for no. " << idx);
     jet.SF_MV2c10_FixedCutBEff_30=(m_mc)?btag->m_sf   ->at(idx):dummy1;
 	  LOG_ME_THIS("updated jet.SF_MV2c10_FixedCutBEff_30 for no. " << idx);

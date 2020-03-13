@@ -18,6 +18,9 @@
 #include "InDetTrackSelectionTool/InDetTrackSelectionTool.h"
 
 
+#include <xAODAnaHelpers/Lumberjack.h>
+
+
 namespace xAH {
 
     class JetContainer : public ParticleContainer<Jet,HelperClasses::JetInfoSwitch>
@@ -310,14 +313,15 @@ namespace xAH {
       std::vector<float> *m_vtx_online_bkg_y0;
       std::vector<float> *m_vtx_online_bkg_z0;
 
-      struct btagOpPoint {
+      struct btagOpPoint 
+      {
         bool m_mc;
         std::string m_accessorName;
         Jet::BTaggerOP m_op;
 	      bool m_old;
         bool m_isContinuous;
 
-	// branches
+	      // branches
         std::vector<int>*                  m_isTag;
         std::vector< std::vector<float> >* m_sf;
         std::vector< std::vector<float> >* m_ineffSf; // for continuous
@@ -327,7 +331,8 @@ namespace xAH {
         {
           m_isTag = new std::vector<int>();
           m_sf    = new std::vector< std::vector<float> >();
-
+          LOG_ME_THIS("c'tor (1) called with mc="<< mc << ", accessorName=" << accessorName);
+          LOG_ME_THIS("beginning of c'tor (1), about to enter 17 chained if/else statements,  m_op has value: " << m_op);
           if(m_accessorName=="Fix30")
             m_op=Jet::BTaggerOP::MV2c10_FixedCutBEff_30;
           else if(m_accessorName=="Fix50")
@@ -362,6 +367,7 @@ namespace xAH {
             m_op=Jet::BTaggerOP::MV2c10_HybBEff_77;
           else if(m_accessorName=="Hyb85")
             m_op=Jet::BTaggerOP::MV2c10_HybBEff_85;
+          LOG_ME_THIS("end of c'tor (1), m_op has value: " << m_op);
         }
 
         btagOpPoint(bool mc, const std::string& tagger, const std::string& wp)
@@ -370,10 +376,12 @@ namespace xAH {
           m_isTag     = new std::vector<int>();
           m_sf        = new std::vector< std::vector<float> >();
 
+          LOG_ME_THIS("c'tor (2) called with mc="<< mc << ", tagger=" << tagger << ", wp=" << wp );
           m_isContinuous = (wp == "Continuous");
           if(m_isContinuous)
             m_ineffSf = new std::vector< std::vector<float> >();
 
+          LOG_ME_THIS("beginning of c'tor (2), about to enter 86 chained if/else statements,  m_op has value: " << m_op);
 	        if(m_accessorName=="DL1rnn_FixedCutBEff_60")
 	          m_op=Jet::BTaggerOP::DL1rnn_FixedCutBEff_60;
 	        else if(m_accessorName=="DL1rnn_FixedCutBEff_70")
@@ -546,6 +554,7 @@ namespace xAH {
             m_op=Jet::BTaggerOP::DL1r_Continuous;
           else if(m_accessorName=="DL1rmu_Continuous")
             m_op=Jet::BTaggerOP::DL1rmu_Continuous;
+          LOG_ME_THIS("end of c'tor (2), m_op has value: " << m_op);
         }
 
         ~btagOpPoint() 
