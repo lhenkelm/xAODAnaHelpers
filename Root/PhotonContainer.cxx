@@ -430,21 +430,26 @@ void PhotonContainer::FillPhoton( const xAOD::IParticle* particle )
 
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "20") != m_infoSwitch.m_isoCones.end()){
     m_ptcone20     -> push_back( photon->isolation( xAOD::Iso::ptcone20    ) / m_units  );
+    /*
     m_ptvarcone20  -> push_back( photon->isolation( xAOD::Iso::ptvarcone20 ) / m_units  );
     m_topoetcone20 -> push_back( photon->isolation( xAOD::Iso::topoetcone20) / m_units  );
+    */
     static SG::AuxElement::Accessor<char> isIsoCone20Acc            ("isIsolated_FixedCutLoose");
     safeFill<char, int, xAOD::Photon>(photon, isIsoCone20Acc, m_isIsolated_Cone20, -1);
   }
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "30") != m_infoSwitch.m_isoCones.end()){
+    /*
     m_ptcone30     -> push_back( photon->isolation( xAOD::Iso::ptcone30    ) / m_units  );
     m_ptvarcone30  -> push_back( photon->isolation( xAOD::Iso::ptvarcone30 ) / m_units  );
     m_topoetcone30 -> push_back( photon->isolation( xAOD::Iso::topoetcone30) / m_units  );
+    */
   }
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "40") != m_infoSwitch.m_isoCones.end()){
+    /*
     m_ptcone40     -> push_back( photon->isolation( xAOD::Iso::ptcone40    ) / m_units  );
     m_ptvarcone40  -> push_back( photon->isolation( xAOD::Iso::ptvarcone40 ) / m_units  );
     m_topoetcone40 -> push_back( photon->isolation( xAOD::Iso::topoetcone40) / m_units  );
-
+    */
     static SG::AuxElement::Accessor<char> isIsoCone40CaloOnlyAcc    ("isIsolated_FixedCutTightCaloOnly");
     safeFill<char, int, xAOD::Photon>(photon, isIsoCone40CaloOnlyAcc, m_isIsolated_Cone40CaloOnly, -1);
 
