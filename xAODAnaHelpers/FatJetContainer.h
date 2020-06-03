@@ -93,6 +93,7 @@ namespace xAH {
       std::vector<float> *m_EMFrac;
       std::vector<int>   *m_nChargedParticles;
 
+      std::vector<float> *m_ANN_score;
       // constituent
       std::vector< int > *m_numConstituents;
 

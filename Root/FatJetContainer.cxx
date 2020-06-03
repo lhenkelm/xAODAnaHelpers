@@ -53,6 +53,7 @@ FatJetContainer::FatJetContainer(const std::string& name, const std::string& det
     m_EMFrac		= new std::vector<float>();
     m_nChargedParticles = new std::vector<int>();
 
+    m_ANN_score         = new std::vector<float>  ();
   }
 
   if ( m_infoSwitch.m_constituent) {
@@ -148,6 +149,7 @@ FatJetContainer::~FatJetContainer()
     delete m_ungrtrk500		;
     delete m_EMFrac		;
     delete m_nChargedParticles	;
+    delete m_ANN_score;
   }
 
   if ( m_infoSwitch.m_constituent) {
@@ -244,6 +246,7 @@ void FatJetContainer::setTree(TTree *tree)
     connectBranch<int>  (tree, "ungrtrk500",		&m_ungrtrk500);
     connectBranch<float>(tree, "EMFrac",		&m_EMFrac);
     connectBranch<int>  (tree, "nChargedParticles",	&m_nChargedParticles);
+    connectBranch<float>  (tree, "ANN_score",    &m_ANN_score);
   }
 
   if ( m_infoSwitch.m_constituent) {
@@ -338,6 +341,7 @@ void FatJetContainer::updateParticle(uint idx, FatJet& fatjet)
     fatjet.ungrtrk500		= m_ungrtrk500  	->at(idx);
     fatjet.EMFrac		= m_EMFrac		->at(idx);
     fatjet.nChargedParticles	= m_nChargedParticles	->at(idx);
+    fatjet.ANN_score    = m_ANN_score->at(idx);
   }
 
   if ( m_infoSwitch.m_constituent) {
@@ -439,6 +443,7 @@ void FatJetContainer::setBranches(TTree *tree)
     setBranch<int>  (tree, "ungrtrk500",   	m_ungrtrk500);
     setBranch<float>(tree, "EMFrac",	   	m_EMFrac);
     setBranch<int>  (tree, "nChargedParticles",	m_nChargedParticles);
+    setBranch<float>(tree, "ANN_score",    m_ANN_score);
   }
 
   if ( m_infoSwitch.m_constituent) {
@@ -530,6 +535,7 @@ void FatJetContainer::clear()
     m_ungrtrk500  	->clear();
     m_EMFrac	  	->clear();
     m_nChargedParticles	->clear();
+    m_ANN_score   ->clear();
   }
 
   if ( m_infoSwitch.m_constituent) {
@@ -689,6 +695,8 @@ void FatJetContainer::FillFatJet( const xAOD::IParticle* particle, int pvLocatio
     if( acc_GhostTrackCount.isAvailable( *fatjet ) ) {
       m_nTracks->push_back( acc_GhostTrackCount( *fatjet ));
     } else { m_nTracks->push_back(-999); }
+    static SG::AuxElement::ConstAccessor<float> acc_ANN_score ("ANN_score");
+    safeFill<float, float, xAOD::Jet>(fatjet, acc_ANN_score, m_ANN_score, -999, m_units);
 
     static SG::AuxElement::ConstAccessor<ElementLink<xAOD::JetContainer>> acc_parent("Parent");
     if (acc_parent.isAvailable(*fatjet)) {
