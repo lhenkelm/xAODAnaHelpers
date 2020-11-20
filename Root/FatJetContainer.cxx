@@ -49,7 +49,7 @@ FatJetContainer::FatJetContainer(const std::string& name, const std::string& det
     m_N2                = new std::vector<float>();
     m_M2                = new std::vector<float>();
     m_D2_1_2            = new std::vector<float>();
-    m_D2_1p7            = new std::vector<float>();
+    m_D2_Beta17            = new std::vector<float>();
     m_NTrimSubjets      = new std::vector<float>();
     m_NClusters         = new std::vector<int>  ();
     m_nTracks           = new std::vector<int>  ();
@@ -149,7 +149,7 @@ FatJetContainer::~FatJetContainer()
     delete m_N2; 
     delete m_M2;
     delete m_D2_1_2;
-    delete m_D2_1p7;
+    delete m_D2_Beta17;
     delete m_NTrimSubjets;
     delete m_NClusters   ;
     delete m_nTracks   ;
@@ -249,7 +249,7 @@ void FatJetContainer::setTree(TTree *tree)
     connectBranch<float>(tree, "N2",           &m_N2);
     connectBranch<float>(tree, "M2",           &m_M2);
     connectBranch<float>(tree, "D2_1_2",       &m_D2_1_2);
-    connectBranch<float>(tree, "D2_1p7",       &m_D2_1p7);
+    connectBranch<float>(tree, "D2_Beta17",       &m_D2_Beta17);
     connectBranch<float>(tree, "NTrimSubjets", &m_NTrimSubjets);
     connectBranch<int>  (tree, "Nclusters",    &m_NClusters);
     connectBranch<int>  (tree, "nTracks",      &m_nTracks);
@@ -347,7 +347,7 @@ void FatJetContainer::updateParticle(uint idx, FatJet& fatjet)
     fatjet.N2           = m_N2          ->at(idx);
     fatjet.M2           = m_M2          ->at(idx);
     fatjet.D2_1_2       = m_D2_1_2      ->at(idx);
-    fatjet.D2_1p7       = m_D2_1p7      ->at(idx);
+    fatjet.D2_Beta17       = m_D2_Beta17      ->at(idx);
     fatjet.NTrimSubjets = m_NTrimSubjets->at(idx);
     fatjet.NClusters    = m_NClusters   ->at(idx);
     fatjet.nTracks      = m_nTracks     ->at(idx);
@@ -452,7 +452,7 @@ void FatJetContainer::setBranches(TTree *tree)
     setBranch<float>(tree, "N2",           m_N2);
     setBranch<float>(tree, "M2",           m_M2);
     setBranch<float>(tree, "D2_1_2",       m_D2_1_2);
-    setBranch<float>(tree, "D2_1p7",       m_D2_1p7);
+    setBranch<float>(tree, "D2_Beta17",       m_D2_Beta17);
     setBranch<float>(tree, "NTrimSubjets", m_NTrimSubjets);
     setBranch<int>  (tree, "Nclusters",    m_NClusters);
     setBranch<int>  (tree, "nTracks",      m_nTracks);
@@ -547,7 +547,7 @@ void FatJetContainer::clear()
     m_N2          ->clear();
     m_M2          ->clear();
     m_D2_1_2      ->clear();
-    m_D2_1p7      ->clear();
+    m_D2_Beta17      ->clear();
     m_NTrimSubjets->clear();
     m_NClusters   ->clear();
     m_nTracks     ->clear();
@@ -709,46 +709,46 @@ void FatJetContainer::FillFatJet( const xAOD::IParticle* particle, int pvLocatio
       m_C2->push_back( acc_ECF3(*fatjet)*acc_ECF1(*fatjet)/pow(acc_ECF2(*fatjet),2.0));
     } else{ m_C2->push_back(-999); }
     
-    static SG::AuxElement::ConstAccessor<float> acc_GECF2_3("GECF2_3");
+    static SG::AuxElement::ConstAccessor<float> acc_ECFG_2_3("ECFG_2_3");
     static SG::AuxElement::ConstAccessor<float> acc_N2("N2");
     if(acc_N2.isAvailable(*fatjet)){
       m_N2->push_back(acc_N2(*fatjet));
     } else if( 
            acc_ECF2.isAvailable(*fatjet) 
-        && acc_GECF2_3.isAvailable(*fatjet)){
-      m_N2->push_back( acc_GECF2_3(*fatjet)/pow(acc_ECF2(*fatjet),2.0));
+        && acc_ECFG_2_3.isAvailable(*fatjet)){
+      m_N2->push_back( acc_ECFG_2_3(*fatjet)/pow(acc_ECF2(*fatjet),2.0));
     } else{ m_N2->push_back(-999); }
     
-    static SG::AuxElement::ConstAccessor<float> acc_GECF1_3("GECF1_3");
+    static SG::AuxElement::ConstAccessor<float> acc_ECFG_1_3("ECFG_1_3");
     static SG::AuxElement::ConstAccessor<float> acc_M2("M2");
     if(acc_M2.isAvailable(*fatjet)){
       m_M2->push_back(acc_M2(*fatjet));
     } else if( 
            acc_ECF2.isAvailable(*fatjet) 
-        && acc_GECF1_3.isAvailable(*fatjet)){
-      m_M2->push_back( acc_GECF1_3(*fatjet)/acc_ECF2(*fatjet) );
+        && acc_ECFG_1_3.isAvailable(*fatjet)){
+      m_M2->push_back( acc_ECFG_1_3(*fatjet)/acc_ECF2(*fatjet) );
     } else{ m_M2->push_back(-999); }
     
-    static SG::AuxElement::ConstAccessor<float> acc_ECF2_beta_2("ECF2_beta_2");
+    static SG::AuxElement::ConstAccessor<float> acc_ECF2_Beta20("ECF2_Beta20");
     static SG::AuxElement::ConstAccessor<float> acc_D2_1_2("D2_1_2");
     if(acc_D2_1_2.isAvailable(*fatjet)){
       m_D2_1_2->push_back(acc_D2_1_2(*fatjet));
     } else if( 
-           acc_ECF2_beta_2.isAvailable(*fatjet) 
+           acc_ECF2_Beta20.isAvailable(*fatjet) 
         && acc_ECF3.isAvailable(*fatjet)){
-      m_D2_1_2->push_back( acc_ECF3(*fatjet)/pow(acc_ECF2_beta_2(*fatjet),3.0/2.0));
+      m_D2_1_2->push_back( acc_ECF3(*fatjet)/pow(acc_ECF2_Beta20(*fatjet),3.0/2.0));
     } else{ m_D2_1_2->push_back(-999);}
     
-    static SG::AuxElement::ConstAccessor<float> acc_ECF2_beta_1p7("ECF2_beta_1p7");
-    static SG::AuxElement::ConstAccessor<float> acc_ECF3_beta_1p7("ECF3_beta_1p7");
-    static SG::AuxElement::ConstAccessor<float> acc_D2_1p7("D2_1p7");
-    if(acc_D2_1p7.isAvailable(*fatjet)){
-      m_D2_1p7->push_back(acc_D2_1p7(*fatjet));
+    static SG::AuxElement::ConstAccessor<float> acc_ECF2_Beta17("ECF2_Beta17");
+    static SG::AuxElement::ConstAccessor<float> acc_ECF3_Beta17("ECF3_Beta17");
+    static SG::AuxElement::ConstAccessor<float> acc_D2_Beta17("D2_Beta17");
+    if(acc_D2_Beta17.isAvailable(*fatjet)){
+      m_D2_Beta17->push_back(acc_D2_Beta17(*fatjet));
     } else if( 
-           acc_ECF2_beta_1p7.isAvailable(*fatjet) 
-        && acc_ECF3_beta_1p7.isAvailable(*fatjet)){
-      m_D2_1p7->push_back( acc_ECF3_beta_1p7(*fatjet)/pow(acc_ECF2_beta_1p7(*fatjet),3.0));
-    } else{ m_D2_1p7->push_back(-999); }
+           acc_ECF2_Beta17.isAvailable(*fatjet) 
+        && acc_ECF3_Beta17.isAvailable(*fatjet)){
+      m_D2_Beta17->push_back( acc_ECF3_Beta17(*fatjet)/pow(acc_ECF2_Beta17(*fatjet),3.0));
+    } else{ m_D2_Beta17->push_back(-999); }
     
     static SG::AuxElement::ConstAccessor<int> acc_GhostTrackCount("GhostTrackCount");
     if( acc_GhostTrackCount.isAvailable( *fatjet ) ) {
