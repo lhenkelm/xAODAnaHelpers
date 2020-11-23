@@ -709,24 +709,24 @@ void FatJetContainer::FillFatJet( const xAOD::IParticle* particle, int pvLocatio
       m_C2->push_back( acc_ECF3(*fatjet)*acc_ECF1(*fatjet)/pow(acc_ECF2(*fatjet),2.0));
     } else{ m_C2->push_back(-999); }
     
-    static SG::AuxElement::ConstAccessor<float> acc_ECFG_2_3("ECFG_2_3");
+    static SG::AuxElement::ConstAccessor<float> acc_ECFG_3_2("ECFG_3_2");
     static SG::AuxElement::ConstAccessor<float> acc_N2("N2");
     if(acc_N2.isAvailable(*fatjet)){
       m_N2->push_back(acc_N2(*fatjet));
     } else if( 
            acc_ECF2.isAvailable(*fatjet) 
-        && acc_ECFG_2_3.isAvailable(*fatjet)){
-      m_N2->push_back( acc_ECFG_2_3(*fatjet)/pow(acc_ECF2(*fatjet),2.0));
+        && acc_ECFG_3_2.isAvailable(*fatjet)){
+      m_N2->push_back( acc_ECFG_3_2(*fatjet)/pow(acc_ECF2(*fatjet),2.0));
     } else{ m_N2->push_back(-999); }
     
-    static SG::AuxElement::ConstAccessor<float> acc_ECFG_1_3("ECFG_1_3");
+    static SG::AuxElement::ConstAccessor<float> acc_ECFG_3_1("ECFG_3_1");
     static SG::AuxElement::ConstAccessor<float> acc_M2("M2");
     if(acc_M2.isAvailable(*fatjet)){
       m_M2->push_back(acc_M2(*fatjet));
     } else if( 
            acc_ECF2.isAvailable(*fatjet) 
-        && acc_ECFG_1_3.isAvailable(*fatjet)){
-      m_M2->push_back( acc_ECFG_1_3(*fatjet)/acc_ECF2(*fatjet) );
+        && acc_ECFG_3_1.isAvailable(*fatjet)){
+      m_M2->push_back( acc_ECFG_3_1(*fatjet)/acc_ECF2(*fatjet) );
     } else{ m_M2->push_back(-999); }
     
     static SG::AuxElement::ConstAccessor<float> acc_ECF2_Beta20("ECF2_Beta20");
