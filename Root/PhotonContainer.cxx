@@ -210,19 +210,29 @@ void PhotonContainer::updateParticle(uint idx, Photon& photon)
 
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "20") != m_infoSwitch.m_isoCones.end()){
     photon.ptcone20 =                   m_ptcone20                  ->at(idx);
+    /* uncommented as per davide (apparently these are missing from (some of) the input ntuples)
     photon.topoetcone20 =               m_topoetcone20              ->at(idx);
+    photon.ptcone30 =                   m_ptcone30                  ->at(idx);
+    photon.ptcone40 =                   m_ptcone40                  ->at(idx);
     photon.ptvarcone20 =                m_ptvarcone20               ->at(idx);
+    */
     photon.isIsolated_Cone20 =          m_isIsolated_Cone20         ->at(idx);
   }
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "30") != m_infoSwitch.m_isoCones.end()){
+    /* uncommented as per davide (apparently these are missing from (some of) the input ntuples)
     photon.ptcone30 =                   m_ptcone30                  ->at(idx);
     photon.topoetcone30 =               m_topoetcone30              ->at(idx);
+    
     photon.ptvarcone30 =                m_ptvarcone30               ->at(idx);
+    */
   }
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "40") != m_infoSwitch.m_isoCones.end()){
+    
+    /* uncommented as per davide (apparently these are missing from (some of) the input ntuples)
     photon.ptcone40 =                   m_ptcone40                  ->at(idx);
     photon.ptvarcone40 =                m_ptvarcone40               ->at(idx);
     photon.topoetcone40 =               m_topoetcone40              ->at(idx);
+    */
     photon.isIsolated_Cone40CaloOnly =  m_isIsolated_Cone40CaloOnly ->at(idx);
     photon.isIsolated_Cone40 =          m_isIsolated_Cone40         ->at(idx);
   }
@@ -420,21 +430,26 @@ void PhotonContainer::FillPhoton( const xAOD::IParticle* particle )
 
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "20") != m_infoSwitch.m_isoCones.end()){
     m_ptcone20     -> push_back( photon->isolation( xAOD::Iso::ptcone20    ) / m_units  );
+    /*
     m_ptvarcone20  -> push_back( photon->isolation( xAOD::Iso::ptvarcone20 ) / m_units  );
     m_topoetcone20 -> push_back( photon->isolation( xAOD::Iso::topoetcone20) / m_units  );
+    */
     static SG::AuxElement::Accessor<char> isIsoCone20Acc            ("isIsolated_FixedCutLoose");
     safeFill<char, int, xAOD::Photon>(photon, isIsoCone20Acc, m_isIsolated_Cone20, -1);
   }
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "30") != m_infoSwitch.m_isoCones.end()){
+    /*
     m_ptcone30     -> push_back( photon->isolation( xAOD::Iso::ptcone30    ) / m_units  );
     m_ptvarcone30  -> push_back( photon->isolation( xAOD::Iso::ptvarcone30 ) / m_units  );
     m_topoetcone30 -> push_back( photon->isolation( xAOD::Iso::topoetcone30) / m_units  );
+    */
   }
   if(m_infoSwitch.m_isolation || std::find(m_infoSwitch.m_isoCones.begin(), m_infoSwitch.m_isoCones.end(), "40") != m_infoSwitch.m_isoCones.end()){
+    /*
     m_ptcone40     -> push_back( photon->isolation( xAOD::Iso::ptcone40    ) / m_units  );
     m_ptvarcone40  -> push_back( photon->isolation( xAOD::Iso::ptvarcone40 ) / m_units  );
     m_topoetcone40 -> push_back( photon->isolation( xAOD::Iso::topoetcone40) / m_units  );
-
+    */
     static SG::AuxElement::Accessor<char> isIsoCone40CaloOnlyAcc    ("isIsolated_FixedCutTightCaloOnly");
     safeFill<char, int, xAOD::Photon>(photon, isIsoCone40CaloOnlyAcc, m_isIsolated_Cone40CaloOnly, -1);
 

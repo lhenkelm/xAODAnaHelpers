@@ -44,12 +44,19 @@ namespace xAH {
       float  ECF3;
       float  C2;
       float  D2;
+      float  N2;
+      float  M2;
+      float  D2_1_2; // D_2^(1,2) of arxiv:1609.07483 [hep-ph]
+      float  D2_Beta17; // D_2^(\beta=1.7) as in arxiv:1409.6298 [hep-ph]
       float  NTrimSubjets;
       int    NClusters;
       int    nTracks;
       int    ungrtrk500;
       float  EMFrac;
       int    nChargedParticles;
+
+      // davide
+      float ANN_score;
 
       // constituent
       int    numConstituents;
