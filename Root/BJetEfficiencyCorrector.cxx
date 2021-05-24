@@ -229,7 +229,12 @@ EL::StatusCode BJetEfficiencyCorrector :: initialize ()
 		calibration="410558";
 		break;
 	      case HelperFunctions::Sherpa21:
-		calibration="426131";
+    if(m_corrFileName.find("2020-21-13TeV-MC16-CDI") != std::string::npos)
+      // more recent calibration files dropped support for Sherpa 2.1
+      // so use the Sherpa 2.2 efficiency maps instead
+		  calibration="410250";
+    else
+		  calibration="426131";
 		break;
 	      case HelperFunctions::Sherpa22:
 		calibration="410250";
