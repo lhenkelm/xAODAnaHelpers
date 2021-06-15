@@ -44,6 +44,10 @@ namespace xAH {
       float  ECF3;
       float  C2;
       float  D2;
+      float  D2_1_2;
+      float  D2_Beta17;
+      float  N2;
+      float  M2;
       float  NTrimSubjets;
       int    NClusters;
       int    nTracks;

@@ -86,6 +86,10 @@ namespace xAH {
       std::vector<float> *m_ECF3;
       std::vector<float> *m_C2;
       std::vector<float> *m_D2;
+      std::vector<float> *m_D2_1_2;
+      std::vector<float> *m_D2_Beta17;
+      std::vector<float> *m_M2;
+      std::vector<float> *m_N2;
       std::vector<float> *m_NTrimSubjets;
       std::vector<int>   *m_NClusters;
       std::vector<int>   *m_nTracks;
